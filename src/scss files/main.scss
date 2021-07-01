@@ -1,0 +1,95 @@
+$primary-color:#000;
+$font-color:#fff;
+
+@mixin d-flex($justify) {
+    display: flex;
+    justify-content: $justify;
+    align-items: center;
+    flex-direction: column;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#root {
+    width: 100%;
+    height: 100vh;
+    background-color: $primary-color;
+    color: $font-color;
+    font-family: 'Rubik',
+        sans-serif;
+    @include d-flex(space-evenly);
+}
+
+.question-number {
+    text-align: right;
+    width: 80%;
+}
+
+.Images {
+    text-align: center;
+}
+
+.france {
+    width: 30%;
+}
+
+.question {
+    text-align: center;
+}
+
+.App {
+    margin-top: 2rem;
+}
+
+//Answers
+.answers {
+    width: 80%;
+    height: 30%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+
+.texts {
+    width: 100%;
+    height: 100%;
+    background-color: $font-color;
+    color: $primary-color;
+    text-align: center;
+    border-radius: 20px;
+    @include d-flex(center);
+    cursor: pointer;
+}
+
+.texts p {
+    background-color: transparent !important;
+    cursor: none;
+}
+
+.Restart {
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.Restart:hover {
+    -webkit-box-shadow: -1px 5px 10px 8px $font-color;
+    box-shadow: -1px 5px 10px 8px $font-color;
+    background-color: $font-color;
+    color: $primary-color;
+    border-radius: 10px;
+}
+
+@media screen and (min-width:768px) {
+    .france {
+        width: 20%;
+    }
+
+    .answers {
+        width: 50%;
+    }
+
+}
